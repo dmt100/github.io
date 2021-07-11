@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+}
+.container {
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto ;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.none {
+    display: none !important;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    flex-direction: column; /* Выёраиваем flex-элементы в колонку, основная ось - Y (column) */
+    justify-content: center; /* Выравнивание по основной оси */
+    align-items: center; /* Выравнивание по поперечной оси */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+/*     background-color: rgb(83, 101, 129);
+    background-image: url(./../img/header/header-bg.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.header-title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.header-subtitle{
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header-arrow {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+/*portfolio*/
+
+.portfolio {
+    padding-top: 80px; /* Отступ сверху */
+    padding-bottom: 115px;
+}
+
+.portfolio-header {
+    margin: 0;
+    margin-bottom: 70px;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+    text-align: center;
+    color: #000000;
+}
+
+.portfolio-cards-wrapper {
+    display: flex; /*  */
+
+    flex-wrap: wrap; /* перенос на след строчку */
+    justify-content: space-between; /* Items will have space between them */
+}
+
+.card {
+    margin-bottom: 30px;
+    max-width: 525px;
+    /* background-color: #FFFFFF; */
+    background-color: #e8ecf2;
+    box-shadow: 0px 10px 40px rgba(126, 155, 189, 0.35);
+    transition: transform 0.2s ease-in;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+}
+
+.card-link {
+    display: block;
+    padding:20px; /*со всех сторон отступ по 20*/
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease-in;
+}
+
+.card-link:hover {
+    color:rgb(39, 91, 236);
+}
+
+.card:last-child, .card:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+.card-img { 
+    margin-bottom: 20px;
+}
+
+.card-title  {
+    margin: 0; 
+    margin-bottom: 13px;
+    font-weight: 600;
+    font-size: 24px; 
+    line-height: 130%; 
+}
+
+.card p { /* относится ко всем тегам "p" которые лежат в card*/
+    margin: 0;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+/* footer */
+
+.footer {
+    padding-top: 45px;
+    padding-bottom: 130px;
+    background: #1E4776;
+    color: white
+}
+
+.footer-row {
+    display: flex; /*выстраиваются в ряд*/
+    flex-direction: row;/*можно и не указывать, тк как выше display: flex*/
+    justify-content: space-between; /*https://www.w3schools.com/cssref/css3_pr_justify-content.asp*/
+}
+
+.footer-col {
+    max-width: 350px;
+    flex-grow: 1;
+}
+
+.footer-copyright {
+    color:#7E9EC9;
+    line-height: 1.3;
+}
+
+.footer-copyright-name {
+    font-weight: 700;
+    font-size:  28px;
+    margin-bottom: 15px;
+}
+
+.footer-copyright p {
+    margin-left: 20px;
+    margin-bottom: 15px; /*на случай дополнительных абзацев с текстом*/
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.footer-icons p {
+    margin-left: 35px;
+    margin-top: 12px;
+    color: #d7e0eb;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.footer-icons-row {
+    margin-left: 30px;
+    display: flex; /* выравнивание друг друга (по ширине?)*/
+    align-items: center; /*выравнивание по поперечной оси*/ 
+}
+ 
+.footer-icons-row /*>*/ * /*+ **/ { /* 1. ">" - селектор больше меньше; "*" - выбираем все теги которые находятся на первом уровне вложенности (">"), а именно ссылки внутри блока .footer-icons-row. Тег img уже лежит внутри ссылок, т.е. это уже второй уровень вложенности. 2. Как работает + и следующий за ним селектор * https://youtu.be/hy0wata4ayk?t=1435 */
+    margin-left: 12px;
+    text-align: center
+}
+
+.footer-button {
+    margin-left: 48px;
+    display: inline-block;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border: 3px solid white;
+    border-radius: 50px;
+
+    color: white;
+    font-weight: bold;
+    line-height: 44px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 0.2s ease-in;
+}
+
+.footer-button:hover {
+    background-color: white;
+    color: #1E4776;
+}
+
+.footer-contacts p {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #7E9EC9;
+}
+
+/* Project */
+
+.project {
+    padding: 80px 0 120px 0;
+    text-align: center;
+}
+
+.project-header {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 1.3;
+}
+
+.project-img {
+    margin-bottom: 70px;
+}
+
+.project-description {
+    margin: 0 auto 60px;
+    max-width: 730px;
+}
+
+.project-description p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.project-btn-back {
+    display: inline-block;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border: 3px solid #275BEC;
+    border-radius: 50px;
+
+    color: #275BEC;
+    font-weight: bold;
+    line-height: 54px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 0.2s ease-in;
+}
+
+.project-btn-back:hover {
+    background-color: #275BEC;
+    color: white;
+}
+
